@@ -1,0 +1,1 @@
+Project about loops, conditions and functions in python
