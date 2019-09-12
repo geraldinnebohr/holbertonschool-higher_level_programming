@@ -2,8 +2,8 @@
 if __name__ == "__main__":
         from sys import argv
         length = len(argv)
-        if length <= 0:
-                print("{} arguments.".format(length))
+        if length <= 1:
+                print("{} arguments.".format(length - 1))
         else:
                 if length == 2:
                         print("{} argument:".format(length - 1))
