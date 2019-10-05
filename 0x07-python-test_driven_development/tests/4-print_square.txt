@@ -1,0 +1,42 @@
+The ``4-print_square`` file
+======================
+
+Using ``print_square``
+-------------------
+
+This is a text file in reStructuredText format for testing.  First import
+``print_square`` from the ``4-print_square`` file:
+
+    >>> print_square = __import__('4-print_square').print_square
+
+Now use it:
+
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+    >>> print_square("hola")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+    >>> print_square(5.3)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(-2.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+    >>> print_square(0)
+    
+    >>> print_square(None)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+

@@ -1,0 +1,72 @@
+The ``0-add_integer`` file
+======================
+
+Using ``add_integer``
+-------------------
+
+This is a text file in reStructuredText format for testing.  First import
+``add_integer`` from the ``0-add_integer`` file:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Now use it:
+
+    >>> add_integer(2, 3)
+    5
+
+    >>> add_integer(2.2, 2)
+    4
+
+    >>> add_integer(6, 3.5)
+    9
+
+    >>> add_integer(2.2, 4.4)
+    6
+
+    >>> add_integer(True, 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+    
+    >>> add_integer(2, False)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(True, True)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+ 
+    >>> add_integer("hola", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer("hola", "mundo")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(5, "hola")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(-2, -2)
+    -4
+
+    >>> add_integer(-2, 3)
+    1
+
+    >>> add_integer(-4, 6)
+    2
+
+    >>> add_integer(None, 2)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(5, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+    >>> add_integer(None, None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+    >>> add_integer(4)
+    102

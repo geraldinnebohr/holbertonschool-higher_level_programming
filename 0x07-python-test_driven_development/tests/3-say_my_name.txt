@@ -1,0 +1,46 @@
+The ``3-say_my_name`` file
+======================
+
+Using ``say_my_name``
+-------------------
+
+This is a text file in reStructuredText format for testing.  First import
+``say_my_name`` from the ``3-say_my_name`` file:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now use it:
+
+    >>> say_my_name("Emma", "Gachancipá")
+    My name is Emma Gachancipá
+
+    >>> say_my_name("Emma", 2)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(1, "Emma")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Emma", 2)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Emma")
+    My name is Emma 
+
+    >>> say_my_name(None, "Linares")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name("Vivian", None)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+    >>> say_my_name(None, None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
