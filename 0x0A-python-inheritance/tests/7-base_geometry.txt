@@ -15,3 +15,33 @@ Now use it:
     >>> geral.integer_validator("name", "emma")
     Traceback (most recent call last):
     TypeError: name must be an integer
+
+    >>> geral = BaseGeometry()
+    >>> geral.integer_validator("name", 0)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+
+    >>> geral = BaseGeometry()
+    >>> geral.integer_validator("name", -4)
+    Traceback (most recent call last):
+    ValueError: name must be greater than 0
+
+    >>> geral = BaseGeometry()
+    >>> geral.integer_validator("name", None)
+    Traceback (most recent call last):
+    TypeError: name must be an integer
+
+    >>> geral = BaseGeometry()
+    >>> geral.area()
+    Traceback (most recent call last):
+    Exception: area() is not implemented
+
+    >>> geral = BaseGeometry()
+    >>> geral.integer_validator(4)
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> geral = BaseGeometry()
+    >>> geral.integer_validator()
+    Traceback (most recent call last):
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
