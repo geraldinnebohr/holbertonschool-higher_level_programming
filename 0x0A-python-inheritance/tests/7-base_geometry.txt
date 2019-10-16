@@ -1,0 +1,17 @@
+The ``7-base_geometry`` file
+======================
+
+Using ``BaseGeometry``
+-------------------
+
+This is a text file in reStructuredText format for testing.  First import
+``BaseGeometry`` from the ``7-base_geometry`` file:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+
+    >>> geral = BaseGeometry()
+    >>> geral.integer_validator("name", "emma")
+    Traceback (most recent call last):
+    TypeError: name must be an integer

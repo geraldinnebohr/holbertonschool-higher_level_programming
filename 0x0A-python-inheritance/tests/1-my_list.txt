@@ -1,0 +1,66 @@
+The ``1-my_list`` file
+======================
+
+Using ``my_list``
+-------------------
+
+This is a text file in reStructuredText format for testing.  First import
+``my_list`` from the ``1-my_list`` file:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+
+    >>> listGeral = MyList()
+    >>> listGeral.append(6)
+    >>> print(listGeral)
+    [6]
+    >>> listGeral.print_sorted()
+    [6]
+
+    >>> newlist = MyList()
+    >>> print(newlist)
+    []
+    >>> newlist.print_sorted()
+    []
+
+    >>> emmalist = MyList()
+    >>> emmalist.append("holitas")
+    >>> emmalist.append("hola")
+    >>> print(emmalist)
+    ['holitas', 'hola']
+    >>> emmalist.print_sorted()
+    ['hola', 'holitas']
+
+    >>> vivilist = MyList()
+    >>> vivilist.append(None)
+    >>> print(vivilist)
+    [None]
+    >>> vivilist.print_sorted()
+    [None]
+
+    >>> nillist = MyList()
+    >>> nillist.append(0)
+    >>> print(nillist)
+    [0]
+    >>> nillist.print_sorted()
+    [0]
+
+    >>> sebaslist = MyList()
+    >>> sebaslist.append(2)
+    >>> sebaslist.append(-10)
+    >>> sebaslist.append(12)
+    >>> print(sebaslist)
+    [2, -10, 12]
+    >>> sebaslist.print_sorted()
+    [-10, 2, 12]
+
+    >>> donilist = MyList()
+    >>> donilist.append('a')
+    >>> donilist.append(12)
+    >>> donilist.append(True)
+    >>> print(donilist)
+    ['a', 12, True]
+    >>> donilist.print_sorted()
+    Traceback (most recent call last):
+    TypeError: unorderable types: int() < str()
