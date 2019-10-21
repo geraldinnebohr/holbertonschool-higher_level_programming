@@ -1,63 +1,53 @@
 #!/usr/bin/python3
-from models.base import Base
+from models.rectangle import Rectangle
 
 class Square(Rectangle):
     """
     fdff
     """
     def __init__(self, size, x=0, y=0, id=None):
-        self.size = Base.__init__(self, width)
-        self.x = x
-        self.y = y
-        Base.__init__(self, id)
+        super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(width))
-        elif value <= 0:
-            raise ValueError("{} must be > 0".format(width))
-        self.__size = value
-
-    @property
-    def x(self):
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(x))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(x))
-        self.__x = value
-
-    @property
-    def y(self):
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        if type(value) is not int:
-            raise TypeError("{} must be an integer".format(y))
-        elif value < 0:
-            raise ValueError("{} must be >= 0".format(y))
-        self.__y = value
-
-    def area(self):
-        return self.__width * self.__height
-
-    def display(self):
-        for i in range(self._Rectangle__width):
-            for j in range(self._Rectangle__height):
-                print("#", end="")
-            print()
+        self.width = value
+        self.height = value
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}/{}".format(super().__init__(id),
-                                                       self.__x, self.__y,
-                                                       self.__width,
-                                                       self.__height)
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
+
+    def update(self, *args, **kwargs):
+        if args is not None and len(args) > 0:
+            for arg in range(len(args)):
+                if arg == 0:
+                    self.id = args[0]
+                if arg == 1:
+                    self.size = args[1]
+                if arg == 2:
+                    self.x = args[2]
+                if arg == 3:
+                    self.y = args[3]
+        else:
+                for key, value in kwargs.items():
+                    if key == "size":
+                        self.size = value
+                    if key == "width":
+                        self.id = value
+                    if key == "x":
+                        self.x = value
+                    if key == "y":
+                        self.y = value
+
+    def to_dictionary(self):
+        my_dict = self.__dict__
+        new_dict = {}
+        new_dict["size"] = my_dict["_Rectangle__width"]
+        new_dict["id"] = my_dict["id"]
+        new_dict["x"] = my_dict["_Rectangle__x"]
+        new_dict["y"] = my_dict["_Rectangle__y"]
+        return new_dict
