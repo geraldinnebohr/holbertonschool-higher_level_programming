@@ -2,12 +2,7 @@
 """
 aesdaew
 """
-
-
 from models.base import Base
-"""
-weew
-"""
 
 
 class Rectangle(Base):
