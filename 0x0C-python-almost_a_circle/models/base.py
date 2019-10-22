@@ -28,7 +28,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        if list_objs is not None or len(list_objs) > 0:
+        if list_objs is not None and len(list_objs) > 0:
             empty_list = []
             for i in list_objs:
                 my_dict = i.to_dictionary()
