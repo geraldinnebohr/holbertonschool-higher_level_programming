@@ -48,9 +48,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        example = cls(5, 4, 3)
-        example.update(**dictionary)
-        return example
+        dummy = cls(5, 4, 3)
+        dummy.update(**dictionary)
+        return dummy
 
     @classmethod
     def load_from_file(cls):
