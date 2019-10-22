@@ -51,9 +51,9 @@ class Base:
         """
         create method
         """
-        if cls.__name__ is 'Rectangle':
+        if cls.__name__ == 'Rectangle':
             dummy = cls(5, 4)
-        elif cls.__name__ is 'Square':
+        if cls.__name__ == 'Square':
             dummy = cls(2)
         dummy.update(**dictionary)
         return dummy
