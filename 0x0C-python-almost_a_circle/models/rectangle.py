@@ -105,10 +105,9 @@ class Rectangle(Base):
         """
         display method
         """
-        for i in range(self._Rectangle__height):
-            for j in range(self._Rectangle__width):
-                print("#", end="")
-            print()
+        print("\n" * self.__y, end="")
+        for i in range(self.__height):
+            print((self.__x * " ") + (self.__width * "#"))
 
     def __str__(self):
         """
