@@ -48,6 +48,9 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        create method
+        """
         if cls.__name__ is 'Rectangle':
             dummy = cls(5, 4)
         elif cls.__name__ is 'Square':
