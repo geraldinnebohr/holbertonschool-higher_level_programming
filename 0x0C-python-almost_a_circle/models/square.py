@@ -1,27 +1,46 @@
 #!/usr/bin/python3
+"""
+awedesfs
+"""
 from models.rectangle import Rectangle
+
 
 class Square(Rectangle):
     """
-    fdff
+    Square class
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """
+        constructor method
+        """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
+        """
+        getter
+        """
         return self.width
 
     @size.setter
     def size(self, value):
+        """
+        setter
+        """
         self.width = value
         self.height = value
 
     def __str__(self):
+        """
+        __str__ method
+        """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
 
     def update(self, *args, **kwargs):
+        """
+        update method
+        """
         if args is not None and len(args) > 0:
             for arg in range(len(args)):
                 if arg == 0:
@@ -44,6 +63,9 @@ class Square(Rectangle):
                         self.y = value
 
     def to_dictionary(self):
+        """
+        to_dictionary method
+        """
         my_dict = self.__dict__
         new_dict = {}
         new_dict["size"] = my_dict["_Rectangle__width"]
