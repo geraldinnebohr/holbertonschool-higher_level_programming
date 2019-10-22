@@ -21,14 +21,14 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if list_dictionaries is None and len(list_dictionaries) is 0:
+        if list_dictionaries is None or len(list_dictionaries) is 0:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-        if list_objs is not None and len(list_objs) > 0:
+        if list_objs is not None or len(list_objs) > 0:
             empty_list = []
             for i in list_objs:
                 my_dict = i.to_dictionary()
