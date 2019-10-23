@@ -75,7 +75,7 @@ class Base:
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """
-        write csv file
+        save to file
         """
         if cls.__name__ is "Rectangle":
             headers = ["id", "width", "height", "x", "y"]
@@ -94,12 +94,12 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """
-        from csv files
+        from cvs files
         """
         lt = []
         if os.path.isfile(cls.__name__ + '.csv'):
             with open(cls.__name__ + '.csv',
-                      encoding='utf-8') as csv_file:
+                     encoding='utf-8') as csv_file:
                 csv_write = csv.DictReader(csv_file)
                 for dic in csv_write:
                     for key, value in dic.items():
