@@ -98,8 +98,7 @@ class Base:
         """
         lt = []
         if os.path.isfile(cls.__name__ + '.csv'):
-            with open(cls.__name__ + '.csv',
-                     encoding='utf-8') as csv_file:
+            with open(cls.__name__ + '.csv', encoding='utf-8') as csv_file:
                 csv_write = csv.DictReader(csv_file)
                 for dic in csv_write:
                     for key, value in dic.items():
