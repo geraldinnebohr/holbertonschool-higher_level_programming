@@ -1,0 +1,1 @@
+More queries in MySql project
