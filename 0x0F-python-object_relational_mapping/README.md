@@ -1,0 +1,1 @@
+Project that using the module in python MySQLdb connects to a database and execute SQL queries. Also, with the module SQLAlchemy use an Object Relational Mapper (ORM).
