@@ -14,7 +14,7 @@ if __name__ == "__main__":
     mysql_db = sys.argv[3]
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
-                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           format(mysql_user, mysql_passwd, mysql_db),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
