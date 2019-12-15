@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Script that is safe from MySQL injections
+"""
+
 import MySQLdb
 import sys
 if __name__ == "__main__":
@@ -9,7 +13,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=mysql_user,
                          passwd=mysql_passwd, db=mysql_db)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = %(mysql_name)s ORDER BY id", {'mysql_name': mysql_name})
+    cur.execute("SELECT * FROM states WHERE name = %(mysql_name)s ORDER BY id",
+                {'mysql_name': mysql_name})
     query_rows = cur.fetchall()
     for row in query_rows:
         print(row)
