@@ -18,7 +18,7 @@ if __name__ == "__main__":
                 format(mysql_name))
     query_rows = cur.fetchall()
     for row in query_rows:
-        if row[1] is mysql_name:
+        if row[1] == mysql_name:
             print(row)
     cur.close()
     db.close()
