@@ -15,14 +15,14 @@ if __name__ == "__main__":
     mysql_db = sys.argv[3]
     mysql_state = sys.argv[4]
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.
-                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+                           format(mysql_user, mysql_passwd, mysql_db),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker()
-    Session.configure(bind=engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
+    match = None
     for state in session.query(State).filter(State.name == mysql_state).all():
         match = state.id
     if match:
