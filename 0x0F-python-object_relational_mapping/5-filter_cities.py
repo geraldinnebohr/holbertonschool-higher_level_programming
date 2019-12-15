@@ -23,7 +23,9 @@ if __name__ == "__main__":
     ORDER BY cities.id ASC;
     """, {'mysql_state': mysql_state})
     query_rows = cur.fetchall()
+    listx = []
     for row in query_rows:
-            print(row[0], end="")
+        listx.append(row[0])
+    print(", ".join(listx))
     cur.close()
     db.close()
