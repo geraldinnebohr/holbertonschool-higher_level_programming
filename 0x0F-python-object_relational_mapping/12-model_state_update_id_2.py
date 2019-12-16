@@ -21,7 +21,7 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    update_state = session.query(State).filter(State.id==2).first()
+    update_state = session.query(State).filter(State.id == 2).first()
     update_state.name = 'New Mexico'
     session.commit()
     session.close()
