@@ -1,2 +1,3 @@
 #!/bin/bash
-curl -sI http://52b80f1a41ed.20.hbtn-cod.io | grep -i Content-Length | cut -d" " -f2
+#Bash script that takes in a URL and displays the size of the response
+curl -sI "$1" | grep -i Content-Length | cut -d" " -f2
