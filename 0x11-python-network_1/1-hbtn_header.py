@@ -5,5 +5,4 @@ import sys
 
 
 with request.urlopen(sys.argv[1]) as r:
-    header_info = r.info()
     print(r.headers['X-Request-Id'])
