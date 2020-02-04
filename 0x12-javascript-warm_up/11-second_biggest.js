@@ -6,6 +6,6 @@ if (!process.argv[2] || !process.argv[3]) {
   const intArgs = args.map(function (x) {
     return parseInt(x, 10);
   });
-  console.log(intArgs.sort());
+  intArgs.sort();
   console.log(args[args.length - 2]);
 }
