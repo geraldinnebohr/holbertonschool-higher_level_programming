@@ -5,7 +5,10 @@ import sys
 
 
 if __name__ == "__main__":
-    r = requests.get('https://api.github.com/users/?client_id=' + sys.argv[1])
-    r.add_header('Authorization: token OAUTH-TOKEN')
+    user = sys.argv[1]
+    token = sys.argv[2]
+    api = 'https://api.github.com/user'
+
+    r = requests.get(api, auth=(user, token))
     json = r.json()
-    print(json)
+    print(json.get('id'))
