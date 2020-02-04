@@ -1,7 +1,7 @@
 #!/usr/bin/node
-let a=(process.argv[2]);
-let b=(process.argv[3]);
-
-function add(a, b) {
-  console.log(a+b)
+function add (a, b) {
+  const sum = a + b;
+  console.log(sum);
 }
+
+add(parseInt(process.argv[2]), parseInt(process.argv[3]));
