@@ -1,0 +1,1 @@
+JS project about objects, scopes and closures
