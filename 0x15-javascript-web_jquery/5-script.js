@@ -1,3 +1,3 @@
 $('#add_item').click(() => {
-    $('ul.my_list').html('<li>rjfer</li>');
-  });
+  $('ul.my_list').append('<li>Item</li>');
+});
